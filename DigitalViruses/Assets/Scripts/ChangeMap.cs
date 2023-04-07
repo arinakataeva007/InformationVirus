@@ -33,6 +33,7 @@ public class ChangeMap : MonoBehaviour
 
     private void Update()
     {
+        DeletePoints();
     }
 
     private void CreatePoints()
@@ -46,8 +47,16 @@ public class ChangeMap : MonoBehaviour
         InstantiateJapan();
         InstantiateAustralia();
     }
-    
 
+    private void DeletePoints()
+    {
+        if (parent.transform.childCount <= 0) 
+            return;
+        
+        var randomIndex = Random.Range(0, parent.transform.childCount);
+        Destroy(parent.transform.GetChild(randomIndex).gameObject);
+    }
+    
     private void InstantiateNorthAmerica()
     {
         for (var i = 0; i < pointCountNorthAmerica; i++)
