@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private Button keylogger;
+    [SerializeField] private Button rootKit;
 
     private int _levelComplete;
 
@@ -12,7 +13,7 @@ public class LevelLoader : MonoBehaviour
     {
         _levelComplete = PlayerPrefs.GetInt("LevelComplete");
 
-        keylogger.interactable = _levelComplete switch
+        rootKit.interactable = _levelComplete switch
         {
             1 => true,
             _ => false
