@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class Country
@@ -29,18 +30,20 @@ public class ChangeMap : MonoBehaviour
 {
     [SerializeField] private GameObject point;
     [SerializeField] private Transform parent;
-
-    private GameObject _point;
-
+    
     [Header("Количество точек")] 
     [SerializeField] private int pointCountNorthAmerica = 2000;
     [SerializeField] private int pointCountSouthAmerica = 1500;
     [SerializeField] private int pointCountGreenLand = 600;
     [SerializeField] private int pointCountIceLand = 100;
     [SerializeField] private int pointCountAfrica = 1000;
-    [SerializeField] private int pointCountRussia = 2000;
+    [SerializeField] private int pointCountRussia = 2500;
     [SerializeField] private int pointCountJapan = 600;
     [SerializeField] private int pointCountAustralia = 600;
+
+    public static int N = 1;
+    private GameObject _point;
+    private List<Country> _countries;
 
     private void Start()
     {
@@ -50,12 +53,21 @@ public class ChangeMap : MonoBehaviour
     private void FixedUpdate()
     {
         DeletePoints();
-    }
-    
 
+        if (N <= 1)
+        {
+            IdleCreateOnePoint();
+            return;
+        }
+
+        N--;
+    }
+
+    
+    
     private void CreatePoints()
     {
-        var countries = new List<Country>
+        _countries = new List<Country>
         {
             new ("NorthAmerica", pointCountNorthAmerica, 
                 (-9f, -4.25f), (0f, 5.3f)),
@@ -85,7 +97,7 @@ public class ChangeMap : MonoBehaviour
                 (5.40f, 7.60f), (-3.80f, -1.50f)),
         };
 
-        foreach (var country in countries)
+        foreach (var country in _countries)
         {
             InstantiatePoints(country);
         }
@@ -93,11 +105,29 @@ public class ChangeMap : MonoBehaviour
 
     private void DeletePoints()
     {
-        if (parent.childCount <= 0) 
+        for (var i = 0; i < N; i++)
+        {
+            if (parent.childCount <= 1)
+                return;
+            
+            var randomIndex = Random.Range(1, parent.childCount);
+            var randomPoint = parent.GetChild(randomIndex).gameObject;
+            
+            Destroy(randomPoint);
+        }
+    }
+    
+    private void IdleCreateOnePoint()
+    {
+        if (parent.childCount <= 1)
             return;
         
-        var randomIndex = Random.Range(0, parent.childCount);
-        Destroy(parent.GetChild(randomIndex).gameObject);
+        var randomCountryIndex = Random.Range(0, _countries.Count);
+        
+        _point = Instantiate(point, 
+            _countries[randomCountryIndex].GetRandomCoordinate(), 
+            Quaternion.identity);
+        _point.transform.parent = parent;
     }
     
     private void InstantiatePoints(Country country)
