@@ -22,7 +22,7 @@ public class Test : MonoBehaviour
 
     public void Right()
     {
-        Game.Money += 10;
+        Game.Money += 5;
         contiue.interactable = true;
         
         _testCount[0]--;
@@ -30,7 +30,7 @@ public class Test : MonoBehaviour
 
     public void Wrong()
     {
-        Game.Money += 7;
+        Game.Money += 2;
         contiue.interactable = true;
         
         _testCount[0]--;
@@ -40,12 +40,12 @@ public class Test : MonoBehaviour
     {
         Destroy(tests[0]);
         tests.RemoveAt(0);
-
+        
+        contiue.interactable = false;
+        
         if (_testCount[0] > 0)
-        {
             tests[0].SetActive(true);
-            contiue.interactable = false;
-        }
+
         else
         {
             _testCount.RemoveAt(0);
@@ -53,7 +53,9 @@ public class Test : MonoBehaviour
             testsMenu.SetActive(false);
             gameMenu.SetActive(true);
             
-            tests[0].SetActive(true);
+            if (tests.Count > 0)
+                tests[0].SetActive(true);
+            
             Time.timeScale = 1f;
         }
             
