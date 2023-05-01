@@ -9,7 +9,8 @@ public class Perks : MonoBehaviour
 {
     [SerializeField] private GameObject game;
     [SerializeField] private GameObject perksMenu;
-    
+
+    [SerializeField] private GameObject virezka;
     [SerializeField] private GameObject loseScreen;
 
     [SerializeField] private List<Button> perks;
@@ -17,7 +18,7 @@ public class Perks : MonoBehaviour
 
     private void Update()
     {
-        CheckLose();
+        //CheckLose();
     }
 
     public void GetPerk(int buttonIndex)
@@ -26,6 +27,8 @@ public class Perks : MonoBehaviour
         {
             perks[buttonIndex].interactable = false;
             Game.Money -= prices[buttonIndex];
+            
+            virezka.SetActive(true);
         }
         else
             return;
@@ -34,7 +37,9 @@ public class Perks : MonoBehaviour
         perksMenu.SetActive(false);
     }
 
-    private void CheckLose()
+
+    #region Lose
+    /*private void CheckLose()
     {
         if (perks.Where((b, i) => b.interactable && Game.Money >= prices[i]).Any())
             return;
@@ -47,5 +52,6 @@ public class Perks : MonoBehaviour
         game.SetActive(false);
         perksMenu.SetActive(false);
         loseScreen.SetActive(true);
-    }
+    }*/
+    #endregion 
 }

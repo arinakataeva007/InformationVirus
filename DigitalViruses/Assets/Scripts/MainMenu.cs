@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] public AudioSource audioSource;
+    
     [SerializeField] private GameObject keylogger;
     [SerializeField] private GameObject rootkit;
     
     [SerializeField] private float time = 5f;
-    
-    public void Exit() => Application.Quit();
 
     private void Start()
     {
+        audioSource.volume = PlayerPrefs.HasKey("VolumeSettingPreference")
+            ? PlayerPrefs.GetFloat("VolumeSettingPreference") : 0.05f;
+        
         Invoke(nameof(Rootkit), time);
     }
     
@@ -32,4 +35,6 @@ public class MainMenu : MonoBehaviour
         
         Invoke(nameof(Keylogger), time);
     }
+    
+    public void Exit() => Application.Quit();
 }

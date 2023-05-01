@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class Settings : MonoBehaviour
@@ -8,9 +9,11 @@ public class Settings : MonoBehaviour
     [SerializeField] public Dropdown resolutionDropdown;
     [SerializeField] public Dropdown qualityDropdown;
     [SerializeField] public Toggle toggle;
+    [SerializeField] public Slider slider;
+    [SerializeField] public AudioSource audioSource;
     
     private Resolution[] _resolutions;
-
+    
     public void Start()
     {
         _resolutions = Screen.resolutions;
@@ -30,6 +33,9 @@ public class Settings : MonoBehaviour
 
     private void LoadSettings()
     {
+        slider.value = PlayerPrefs.HasKey("VolumeSettingPreference")
+            ? PlayerPrefs.GetFloat("VolumeSettingPreference") : 0.05f;
+        
         qualityDropdown.value = PlayerPrefs.HasKey("QualitySettingPreference") 
             ? PlayerPrefs.GetInt("QualitySettingPreference") : 3;
         
@@ -41,6 +47,11 @@ public class Settings : MonoBehaviour
         toggle.isOn = Screen.fullScreen;
     }
 
+    public void SetVolume(float vol)
+    {
+        audioSource.volume = vol;
+    }
+    
     public void SetFullScreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
@@ -59,6 +70,7 @@ public class Settings : MonoBehaviour
 
     public void SaveSettings()
     {
+        PlayerPrefs.SetFloat("VolumeSettingPreference", slider.value);
         PlayerPrefs.SetInt("QualitySettingPreference", qualityDropdown.value);
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
         PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));

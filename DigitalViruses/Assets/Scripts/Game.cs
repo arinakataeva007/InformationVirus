@@ -9,7 +9,7 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        Money = 90;
+        Money = 30;
     }
 
     private void Update()
