@@ -1,7 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,7 +8,10 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject rootkit;
     
     [SerializeField] private float time = 5f;
-
+    
+    public void Exit() => Application.Quit();
+    
+    #region Images switcher
     private void Start()
     {
         audioSource.volume = PlayerPrefs.HasKey("VolumeSettingPreference")
@@ -35,6 +35,5 @@ public class MainMenu : MonoBehaviour
         
         Invoke(nameof(Keylogger), time);
     }
-    
-    public void Exit() => Application.Quit();
+    #endregion
 }

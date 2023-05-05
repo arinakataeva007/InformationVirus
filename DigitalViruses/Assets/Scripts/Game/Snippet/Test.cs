@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
 
 public class Test : MonoBehaviour
@@ -12,7 +9,7 @@ public class Test : MonoBehaviour
     [SerializeField] private GameObject gameMenu;
     [SerializeField] private List<GameObject> tests;
     
-    private List<int> _testCount = new List<int>() { 3, 2, 2, 3, 2 };
+    [SerializeField] private List<int> _testCount;
 
     private void Start()
     {
@@ -22,7 +19,7 @@ public class Test : MonoBehaviour
 
     public void Right()
     {
-        Game.Money += 5;
+        Game.Money += 10;
         contiue.interactable = true;
         
         _testCount[0]--;
@@ -30,7 +27,7 @@ public class Test : MonoBehaviour
 
     public void Wrong()
     {
-        Game.Money += 2;
+        Game.Money += 5;
         contiue.interactable = true;
         
         _testCount[0]--;

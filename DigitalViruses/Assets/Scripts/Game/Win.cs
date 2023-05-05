@@ -18,7 +18,11 @@ public class Win : MonoBehaviour
         if (parent.childCount > 1)
             return;
         
+        PlayerPrefs.SetInt("LevelComplete", 1);
+        
         game.SetActive(false);
         winScreen.SetActive(true);
+        
+        Time.timeScale = 0f;
     }
 }

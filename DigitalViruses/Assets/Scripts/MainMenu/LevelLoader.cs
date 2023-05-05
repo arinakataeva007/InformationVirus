@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
@@ -20,5 +19,8 @@ public class LevelLoader : MonoBehaviour
         };
     }
 
-    public void LoadLevel(int level) => SceneManager.LoadScene(level);
+    public void LoadLevel(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
 }

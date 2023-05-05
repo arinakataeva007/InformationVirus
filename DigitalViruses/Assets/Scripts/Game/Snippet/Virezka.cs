@@ -17,7 +17,9 @@ public class Virezka : MonoBehaviour
         Destroy(virezki[0]);
         virezki.RemoveAt(0);
         
-        virezki[0].SetActive(true);
+        if (virezki.Count > 0)
+            virezki[0].SetActive(true);
+        
         virezka.SetActive(false);
     }
 }

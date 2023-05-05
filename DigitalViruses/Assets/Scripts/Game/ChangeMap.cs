@@ -7,7 +7,7 @@ public class Country
     public string Name { get; }
     public int PointCount { get; }
     
-    public Vector3 Coordinate { get; set; }
+    public Vector3 Coordxinate { get; set; }
 
     public (float, float) X, Y;
 
@@ -61,8 +61,6 @@ public class ChangeMap : MonoBehaviour
 
         N--;
     }
-
-    
     
     private void CreatePoints()
     {
