@@ -4390,7 +4390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e555f08fe03f124e966d8a3ffa4ebf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyToAdd: 5
+  moneyToAdd: 10
 --- !u!114 &535464020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4412,7 +4412,7 @@ MonoBehaviour:
   - {fileID: 5377311}
   - {fileID: 602490294}
   - {fileID: 1782005233}
-  time: 15
+  time: 7
 --- !u!1 &547126329
 GameObject:
   m_ObjectHideFlags: 0
