@@ -10,7 +10,7 @@ public class Perks : MonoBehaviour
     [SerializeField] private GameObject game;
     [SerializeField] private GameObject perksMenu;
 
-    [SerializeField] private GameObject virezka;
+    [SerializeField] private GameObject chat;
     [SerializeField] private GameObject loseScreen;
 
     [SerializeField] private List<Button> perks;
@@ -28,7 +28,8 @@ public class Perks : MonoBehaviour
             perks[buttonIndex].interactable = false;
             Game.Money -= prices[buttonIndex];
             
-            virezka.SetActive(true);
+            chat.SetActive(true);
+            Time.timeScale = 0f;
         }
         else
             return;

@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="78cff8e4-8518-414e-845a-f451ce5e0eaa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DigitalViruses/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DigitalViruses/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BeginingCutScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BeginingCutScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Keylogger.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Keylogger.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/RootKit.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RootKit.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BeginingCutScene/GameLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BeginingCutScene/GameLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/Snippet/Perks.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/Snippet/Perks.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Timeline/CutScene.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timeline/CutScene.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,15 +21,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/DisableAnswers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LevelLoader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MWCPointsManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pause.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/Chat.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Settings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Test.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Virezka.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Win.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.6.6/Editor/BurstAotCompiler.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -153,6 +143,9 @@
       <workItem from="1683117919304" duration="758000" />
       <workItem from="1683305434369" duration="7156000" />
       <workItem from="1683556571144" duration="1311000" />
+      <workItem from="1685614744909" duration="4768000" />
+      <workItem from="1685800319494" duration="3199000" />
+      <workItem from="1685895240309" duration="576000" />
     </task>
     <servers />
   </component>
